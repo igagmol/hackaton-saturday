@@ -23,15 +23,13 @@ TEST_TEXT = ("Every year, companies lose millions because the right people never
 
 
 def key():
-    k = os.environ.get("ELEVENLABS_API_KEY")
-    if not k:
-        sys.exit("Set ELEVENLABS_API_KEY")
-    return k
+    # empty key is OK if a network secret / proxy injects xi-api-key for api.elevenlabs.io
+    return os.environ.get("ELEVENLABS_API_KEY", "")
 
 
 def api(path, body=None):
     req = urllib.request.Request(API + path, data=json.dumps(body).encode() if body else None,
-                                 headers={"xi-api-key": key(), "Content-Type": "application/json"})
+                                 headers={"Content-Type": "application/json", **({"xi-api-key": key()} if key() else {})})
     try:
         with urllib.request.urlopen(req, timeout=120) as r:
             return r.read()
