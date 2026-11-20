@@ -1,0 +1,11 @@
+{
+  "voice_id": "",
+  "_note": "PLACEHOLDER. start = second in the screen recording. ~2.6 words/second. Rewrite once the demo exists.",
+  "segments": [
+    {"start": 0.0,  "text": "Companies already have the data to match people with projects. They just can't see it."},
+    {"start": 6.0,  "text": "Meet [PRODUCT]. An HR manager opens a new project and asks: who should staff this?"},
+    {"start": 13.0, "text": "In seconds, [PRODUCT] ranks internal candidates by skills, availability and growth potential, and explains why."},
+    {"start": 22.0, "text": "It also flags the skill gaps the organization will face next quarter, before they become hiring costs."},
+    {"start": 30.0, "text": "[KEY METRIC]: from weeks of manual search to minutes. Built on NTT DATA's own data. Ready to scale."}
+  ]
+}
