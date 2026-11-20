@@ -1,6 +1,6 @@
 {
-  "voice_id": "",
-  "_note": "PLACEHOLDER. start = second in the screen recording. ~2.6 words/second. Rewrite once the demo exists.",
+  "voice_id": "nPczCjzI2devNBz1zQrb",
+  "_note": "Voice: Brian (ElevenLabs stock, male narrator). PLACEHOLDER text. start = second in the screen recording. ~2.6 words/second. Rewrite once the demo exists.",
   "segments": [
     {"start": 0.0,  "text": "Companies already have the data to match people with projects. They just can't see it."},
     {"start": 6.0,  "text": "Meet [PRODUCT]. An HR manager opens a new project and asks: who should staff this?"},
