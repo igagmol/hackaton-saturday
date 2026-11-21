@@ -25,7 +25,7 @@ dims.forEach(([x,y],i)=>{s.addShape(p.ShapeType.roundRect,{x,y,w:2.9,h:1.3,rectR
 s.addText(DT[i][0],{x:x+0.15,y:y+0.1,w:2.6,h:0.35,fontFace:F,fontSize:14,bold:true,color:BLUE,margin:0,isTextBox:true});
 s.addText(DT[i][1],{x:x+0.15,y:y+0.5,w:2.6,h:0.7,fontFace:F,fontSize:14,color:NAVY,margin:0,valign:'top',isTextBox:true});});
 s.addShape(p.ShapeType.ellipse,{x:cx-0.6,y:cy-0.6,w:1.2,h:1.2,fill:{color:BLUE},line:{color:WHITE,width:3}});
-s.addText('Senior staffing team',{x:cx-0.6,y:cy-0.6,w:1.2,h:1.2,fontFace:F,fontSize:13,bold:true,color:WHITE,align:'center',valign:'middle',margin:0,isTextBox:true});
+s.addText('Staffing manager (non-technical)',{x:cx-0.6,y:cy-0.6,w:1.2,h:1.2,fontFace:F,fontSize:11,bold:true,color:WHITE,align:'center',valign:'middle',margin:0,isTextBox:true});
 s.addShape(p.ShapeType.roundRect,{x:3.5,y:3.5,w:3,h:0.8,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
 s.addText('Matching people to projects is slow and opaque',{x:3.5,y:3.5,w:3,h:0.8,fontFace:F,fontSize:13,bold:true,color:WHITE,align:'center',valign:'middle',margin:0,isTextBox:true});
 // 3 solution
@@ -33,7 +33,7 @@ s=p.addSlide();title(s,'The solution');
 [[0.5,1.1],[3.6,1.1],[0.5,3.25],[3.6,3.25]].forEach(([x,y],i)=>box(s,x,y,2.9,1.95,['1 · Interpret','2 · Match','3 · Explain','4 · Compare'][i],'Solves: '+['lack of automatic data standardization','slow best match','unclear decisions','missing key information'][i]+'\n[ how, one line ]\n[ image / keyword ]'));
 s.addShape(p.ShapeType.roundRect,{x:6.7,y:1.1,w:2.8,h:2.55,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
 s.addText('How it works',{x:6.85,y:1.2,w:2.5,h:0.35,fontFace:F,fontSize:14,bold:true,color:WHITE,margin:0,isTextBox:true});
-s.addText('[ functional MVP · data integrated · flow / diagram ]',{x:6.85,y:1.6,w:2.5,h:1.9,fontFace:F,fontSize:14,italic:true,color:'BFD9EE',margin:0,valign:'top',isTextBox:true});
+s.addText('Standardized data + surveys (preferences & risks) + 5-min psychological test predict the top team. Plain-language input, human decides, explanations in natural language.',{x:6.85,y:1.6,w:2.5,h:1.9,fontFace:F,fontSize:14,color:WHITE,margin:0,valign:'top',isTextBox:true});
 box(s,6.7,3.85,2.8,1.35,'Why it is perfect for [ user ]','[ one-line recap ]');
 // 4 viability
 s=p.addSlide();title(s,'Viability & impact');
