@@ -20,7 +20,7 @@ s=p.addSlide();title(s,'The problem');
 const cx=5,cy=2.75;
 [[3.4,2.0,0],[6.6,2.0,1],[3.4,4.3,1],[6.6,4.3,0]].forEach(([x,y,fv])=>s.addShape(p.ShapeType.line,{x:Math.min(cx,x),y:Math.min(cy,y),w:Math.abs(x-cx),h:Math.abs(y-cy),flipV:!!fv,line:{color:BLUE,width:2}}));
 const dims=[[0.5,1.0],[6.6,1.0],[0.5,3.9],[6.6,3.9]];
-const DT=['Lack of data standardization','Lack of psychological and preference information','Matching takes a lot of time: too much information','Reasons behind decisions are not clear'];
+const DT=['Lack of data standardization','Lack of crucial information to make the decision','Matching takes a lot of time: too much information','Reasons behind decisions are not clear'];
 dims.forEach(([x,y],i)=>{s.addShape(p.ShapeType.roundRect,{x,y,w:2.9,h:1.3,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
 s.addText(DT[i],{x:x+0.15,y:y+0.1,w:2.6,h:1.1,fontFace:F,fontSize:18,bold:true,color:BLUE,align:'center',valign:'middle',margin:0,isTextBox:true});});
 s.addShape(p.ShapeType.ellipse,{x:cx-0.6,y:cy-0.6,w:1.2,h:1.2,fill:{color:BLUE},line:{color:WHITE,width:3}});
@@ -29,25 +29,27 @@ s.addShape(p.ShapeType.roundRect,{x:3.5,y:3.5,w:3,h:0.8,rectRadius:0.15,fill:{co
 s.addText('Matching people to projects is slow and opaque',{x:3.5,y:3.5,w:3,h:0.8,fontFace:F,fontSize:13,bold:true,color:WHITE,align:'center',valign:'middle',margin:0,isTextBox:true});
 // 3 solution
 s=p.addSlide();title(s,'The solution');
-const INN=[['1','Automated standardization'],['2','Complete profiles'],['3','Plain-language prediction'],['4','Explained decisions']];
+const INN=[['1  Automated standardization',''],['2  Complete profiles','Existing data · Preferences and risks · Psychological features'],['3  Plain-language prediction',''],['4  Explained decisions','']];
 [[0.5,1.1],[5.1,1.1],[0.5,3.25],[5.1,3.25]].forEach(([x,y],i)=>{s.addShape(p.ShapeType.roundRect,{x,y,w:4.4,h:1.95,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
- s.addText([{text:INN[i][0],options:{fontSize:32,color:AC,breakLine:true,align:'center'}},{text:INN[i][1],options:{fontSize:28,color:BLUE,align:'center'}}],{x:x+0.2,y:y+0.1,w:4,h:1.75,fontFace:F,bold:true,align:'center',valign:'middle',margin:0,isTextBox:true});});
+ const runs=[{text:INN[i][0],options:{fontSize:26,bold:true,color:BLUE,align:'center',breakLine:!!INN[i][1]}}];
+ if(INN[i][1])runs.push({text:INN[i][1],options:{fontSize:16,color:NAVY,align:'center'}});
+ s.addText(runs,{x:x+0.2,y:y+0.1,w:4,h:1.75,fontFace:F,align:'center',valign:'middle',margin:0,isTextBox:true});});
 // 4 viability
 s=p.addSlide();title(s,'Viability & impact');
 s.addShape(p.ShapeType.roundRect,{x:0.5,y:1.1,w:4.4,h:4.1,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
 s.addText('MVP cost',{x:0.7,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,color:BLUE,margin:0,isTextBox:true});
-[['Time','Pilot: 6 weeks'],['Money','Model use: ~€300/month'],['Resources','5 staffing managers, 2 h/week'],['Total','~€3k, pays back in ~4 teams']].forEach(([a,b],i)=>{
+[['Time','6-week MVP pilot'],['Cost','~€3k over the 6 weeks'],['Human Resources','5 staffing managers, 2 h/week'],['Payback','After ~4 teams staffed']].forEach(([a,b],i)=>{
  const x=0.7+(i%2)*2.05,y=1.75+Math.floor(i/2)*1.7;
  s.addShape(p.ShapeType.roundRect,{x,y,w:1.9,h:1.5,rectRadius:0.12,fill:{color:WHITE},line:{color:BLUE,width:1}});
  s.addText(a,{x:x+0.1,y:y+0.1,w:1.7,h:0.3,fontFace:F,fontSize:14,bold:true,color:NAVY,margin:0,isTextBox:true});
  s.addText(b,{x:x+0.1,y:y+0.45,w:1.7,h:0.7,fontFace:F,fontSize:14,color:NAVY,margin:0,valign:'top',isTextBox:true});
  s.addText('hypothesis',{x:x+0.1,y:y+1.15,w:1.7,h:0.25,fontFace:F,fontSize:10,italic:true,color:GREY,margin:0,isTextBox:true});});
-[['Revenue generation','+€0.7M–1.4M / year','per 1,000 people, +1 to +2 pts utilization'],['Time savings','−90%  (days → hours)','time to staff one team, range −80% to −95%'],['Talent','−1 week on the bench','per person placed, using hidden internal skills']].forEach(([a,b,c],i)=>{
- const y=1.1+i*1.4;
- s.addShape(p.ShapeType.roundRect,{x:5.1,y,w:4.4,h:1.3,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
- s.addText(a,{x:5.3,y:y+0.08,w:4,h:0.3,fontFace:F,fontSize:14,bold:true,color:'BFD9EE',margin:0,isTextBox:true});
- s.addText(b,{x:5.3,y:y+0.4,w:4,h:0.5,fontFace:F,fontSize:28,bold:true,color:WHITE,margin:0,isTextBox:true});
- s.addText(c+' (hypothesis)',{x:5.3,y:y+0.93,w:4,h:0.3,fontFace:F,fontSize:11,italic:true,color:'BFD9EE',margin:0,isTextBox:true});});
+[['Revenue generation','+€0.7M–1.4M / year','per 1,000 people: +1 to +2 pts utilization × €70k billing per head'],['Time savings','−90%  (days → hours)','time to staff one team, range −80% to −95%']].forEach(([a,b,c],i)=>{
+ const y=1.1+i*2.1;
+ s.addShape(p.ShapeType.roundRect,{x:5.1,y,w:4.4,h:1.95,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
+ s.addText(a,{x:5.3,y:y+0.15,w:4,h:0.35,fontFace:F,fontSize:16,bold:true,color:'BFD9EE',margin:0,isTextBox:true});
+ s.addText(b,{x:5.3,y:y+0.6,w:4,h:0.7,fontFace:F,fontSize:30,bold:true,color:WHITE,margin:0,isTextBox:true});
+ s.addText(c+' (hypothesis)',{x:5.3,y:y+1.35,w:4,h:0.5,fontFace:F,fontSize:12,italic:true,color:'BFD9EE',margin:0,valign:'top',isTextBox:true});});
 // 5 eval + scale
 s=p.addSlide();title(s,'Evaluation & scalability');
 [['Synergy gap','<10 pts'],['Performance','+10%'],['Time to staff','−80%']].forEach(([k,v],i)=>{const y=1.1+i*1.4;
