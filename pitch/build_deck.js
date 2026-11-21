@@ -11,10 +11,10 @@ function box(s,x,y,w,h,head,ph_,fill,hc){s.addShape(p.ShapeType.roundRect,{x,y,w
  ph(s,ph_,{x:x+0.15,y:y+0.45,w:w-0.3,h:h-0.55,valign:'top',margin:0});}
 // 1 cover
 let s=p.addSlide();s.background={color:NAVY};logo(s,true);
-s.addText('The person you need is already in the company',{x:0.6,y:1.4,w:8.8,h:1.6,fontFace:F,fontSize:40,bold:true,color:WHITE,italic:false,margin:0,isTextBox:true,valign:'middle'});
-s.addShape(p.ShapeType.roundRect,{x:0.6,y:3.3,w:4.2,h:0.5,rectRadius:0.1,fill:{color:BLUE},line:{color:BLUE}});
-s.addText('AI-Driven Talent & Organizational Intelligence',{x:0.6,y:3.3,w:4.2,h:0.5,fontFace:F,fontSize:12,bold:true,color:WHITE,align:'center',valign:'middle',margin:0,isTextBox:true});
-s.addText('[ Product name ]  ·  [ Team names ]  ·  Hackathon 21 Nov 2026',{x:0.6,y:4.7,w:8.8,h:0.4,fontFace:F,fontSize:14,color:'BFD9EE',margin:0,isTextBox:true});
+s.addText('CDTM Valencia Hacks',{x:0.6,y:0.9,w:6,h:0.4,fontFace:F,fontSize:18,bold:true,color:AC,margin:0,isTextBox:true});
+s.addText('Marketplace for the Automatic Prediction of High-Performance Teams',{x:0.6,y:1.4,w:8.8,h:1.7,fontFace:F,fontSize:40,bold:true,color:WHITE,margin:0,isTextBox:true,valign:'middle'});
+s.addText('The person you need is already in the company',{x:0.6,y:3.2,w:8.8,h:0.5,fontFace:F,fontSize:20,italic:true,color:'BFD9EE',margin:0,isTextBox:true});
+s.addText('Sarah Vasquez  ·  José Antonio Calamardo Manrique  ·  Ignacio Aguera Molto\nDavid García Carrión  ·  Damián Lorca Andría',{x:0.6,y:4.3,w:8.8,h:0.8,fontFace:F,fontSize:14,color:WHITE,margin:0,isTextBox:true,valign:'top',paraSpaceAfter:4});
 // 2 problem
 s=p.addSlide();title(s,'The problem');
 const cx=5,cy=2.75;
