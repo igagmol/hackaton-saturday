@@ -45,7 +45,7 @@ s.addText('MVP cost',{x:0.7,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,col
  s.addText(b,{x:x+0.1,y:y+0.45,w:1.7,h:0.6,fontFace:F,fontSize:c?24:14,bold:!!c,color:c?BLUE:NAVY,margin:0,valign:'top',isTextBox:true});
  if(c)s.addText(c,{x:x+0.1,y:y+0.95,w:1.7,h:0.25,fontFace:F,fontSize:12,color:NAVY,margin:0,isTextBox:true});
  s.addText('hypothesis',{x:x+0.1,y:y+1.2,w:1.7,h:0.25,fontFace:F,fontSize:10,italic:true,color:GREY,margin:0,isTextBox:true});});
-[['Revenue generation','+€0.7M–1.4M / year','per 1,000 people: 2–5 fewer bench days each (+1 to +2 pts utilization × €70k billing)'],['Time savings','€2,700 per team','40 h → 4 h of manager time, at €75/h (range €50–100)']].forEach(([a,b,c],i)=>{
+[['Revenue generation','+€0.7M–1.4M / year','per 1,000 people: 2–5 fewer bench days each (+1 to +2 pts utilization × €70k billing)'],['Time savings','€2,400 per team','−80% time: 40 h → 8 h of manager time, at €75/h']].forEach(([a,b,c],i)=>{
  const y=1.1+i*2.1;
  s.addShape(p.ShapeType.roundRect,{x:5.1,y,w:4.4,h:1.95,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
  s.addText(a,{x:5.3,y:y+0.15,w:4,h:0.35,fontFace:F,fontSize:16,bold:true,color:'BFD9EE',margin:0,isTextBox:true});
@@ -53,7 +53,7 @@ s.addText('MVP cost',{x:0.7,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,col
  s.addText(c+' (hypothesis)',{x:5.3,y:y+1.35,w:4,h:0.5,fontFace:F,fontSize:12,italic:true,color:'BFD9EE',margin:0,valign:'top',isTextBox:true});});
 // 5 eval + scale
 s=p.addSlide();title(s,'Evaluation & scalability');
-[['Synergy gap','<10 pts'],['Performance','+10%'],['Time to staff','−90%']].forEach(([k,v],i)=>{const y=1.1+i*1.4;
+[['Synergy gap','<10 pts'],['Performance','+10%'],['Time to staff','at least −50%']].forEach(([k,v],i)=>{const y=1.1+i*1.4;
  s.addShape(p.ShapeType.roundRect,{x:0.5,y,w:4.5,h:1.3,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
  s.addText(k,{x:0.7,y:y+0.08,w:4.1,h:0.35,fontFace:F,fontSize:16,bold:true,color:NAVY,margin:0,isTextBox:true});
  s.addText(v,{x:0.7,y:y+0.45,w:4.1,h:0.6,fontFace:F,fontSize:36,bold:true,color:BLUE,margin:0,isTextBox:true});
