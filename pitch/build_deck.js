@@ -20,7 +20,7 @@ s=p.addSlide();title(s,'The problem');
 const cx=5,cy=2.75;
 [[3.4,2.0,0],[6.6,2.0,1],[3.4,4.3,1],[6.6,4.3,0]].forEach(([x,y,fv])=>s.addShape(p.ShapeType.line,{x:Math.min(cx,x),y:Math.min(cy,y),w:Math.abs(x-cx),h:Math.abs(y-cy),flipV:!!fv,line:{color:BLUE,width:2}}));
 const dims=[[0.5,1.0],[6.6,1.0],[0.5,3.9],[6.6,3.9]];
-const DT=[['1 · Data','Lack of automatic standardization of the data'],['2 · Matching','It takes a lot of time to make the best match because of lots of information'],['3 · Decisions','Managers cannot see why a decision was made'],['4 · Fit','Lack of important information to better relocate human resources where they will work best']];
+const DT=[['1 · Data','Lack of automatic standardization of the data'],['2 · Fit','Lack of important information to better relocate human resources where they will work best'],['3 · Matching','It takes a lot of time to make the best match because of lots of information'],['4 · Decisions','Managers cannot see why a decision was made']];
 dims.forEach(([x,y],i)=>{s.addShape(p.ShapeType.roundRect,{x,y,w:2.9,h:1.3,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
 s.addText(DT[i][0],{x:x+0.15,y:y+0.1,w:2.6,h:0.35,fontFace:F,fontSize:14,bold:true,color:BLUE,margin:0,isTextBox:true});
 s.addText(DT[i][1],{x:x+0.15,y:y+0.5,w:2.6,h:0.7,fontFace:F,fontSize:14,color:NAVY,margin:0,valign:'top',isTextBox:true});});
