@@ -20,7 +20,7 @@ s=p.addSlide();title(s,'The problem');
 const cx=5,cy=2.75;
 [[3.4,2.0,0],[6.6,2.0,1],[3.4,4.3,1],[6.6,4.3,0]].forEach(([x,y,fv])=>s.addShape(p.ShapeType.line,{x:Math.min(cx,x),y:Math.min(cy,y),w:Math.abs(x-cx),h:Math.abs(y-cy),flipV:!!fv,line:{color:BLUE,width:2}}));
 const dims=[[0.5,1.0],[6.6,1.0],[0.5,3.9],[6.6,3.9]];
-const DT=[['1 · Lack of standardization','Briefs and skills are described differently'],['2 · Hard to match','Hard to match skill and person to project'],['3 · No explanation','Managers get a name without the reason'],['4 · Missing information','Not enough information to choose the best option']];
+const DT=[['1 · Data standardization','No automatic standardization: manual and time-consuming'],['2 · Best match out of reach','Too much data to access and search'],['3 · No traceability','Nobody can see why a decision was made'],['4 · Incomplete profiles','Hidden skills go unused']];
 dims.forEach(([x,y],i)=>{s.addShape(p.ShapeType.roundRect,{x,y,w:2.9,h:1.3,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
 s.addText(DT[i][0],{x:x+0.15,y:y+0.1,w:2.6,h:0.35,fontFace:F,fontSize:14,bold:true,color:BLUE,margin:0,isTextBox:true});
 s.addText(DT[i][1],{x:x+0.15,y:y+0.5,w:2.6,h:0.7,fontFace:F,fontSize:14,color:NAVY,margin:0,valign:'top',isTextBox:true});});
@@ -30,7 +30,7 @@ s.addShape(p.ShapeType.roundRect,{x:3.5,y:3.5,w:3,h:0.8,rectRadius:0.15,fill:{co
 s.addText('Matching people to projects is slow and opaque',{x:3.5,y:3.5,w:3,h:0.8,fontFace:F,fontSize:13,bold:true,color:WHITE,align:'center',valign:'middle',margin:0,isTextBox:true});
 // 3 solution
 s=p.addSlide();title(s,'The solution');
-[[0.5,1.1],[3.6,1.1],[0.5,3.25],[3.6,3.25]].forEach(([x,y],i)=>box(s,x,y,2.9,1.95,['1 · Interpret','2 · Match','3 · Explain','4 · Compare'][i],'Solves: '+['lack of standardization','hard to match','no explanation','missing information'][i]+'\n[ how, one line ]\n[ image / keyword ]'));
+[[0.5,1.1],[3.6,1.1],[0.5,3.25],[3.6,3.25]].forEach(([x,y],i)=>box(s,x,y,2.9,1.95,['1 · Interpret','2 · Match','3 · Explain','4 · Compare'][i],'Solves: '+['manual data standardization','hard to find the best match','no traceability','incomplete profiles'][i]+'\n[ how, one line ]\n[ image / keyword ]'));
 s.addShape(p.ShapeType.roundRect,{x:6.7,y:1.1,w:2.8,h:2.55,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
 s.addText('How it works',{x:6.85,y:1.2,w:2.5,h:0.35,fontFace:F,fontSize:14,bold:true,color:WHITE,margin:0,isTextBox:true});
 s.addText('[ functional MVP · data integrated · flow / diagram ]',{x:6.85,y:1.6,w:2.5,h:1.9,fontFace:F,fontSize:14,italic:true,color:'BFD9EE',margin:0,valign:'top',isTextBox:true});
