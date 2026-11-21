@@ -40,13 +40,13 @@ box(s,6.7,3.85,2.8,1.35,'Why it is perfect for [ user ]','[ one-line recap ]');
 s=p.addSlide();title(s,'Viability & impact');
 s.addShape(p.ShapeType.roundRect,{x:0.5,y:1.1,w:4.4,h:4.1,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
 s.addText('MVP cost',{x:0.7,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,color:BLUE,margin:0,isTextBox:true});
-[['Time','Pilot: 6 weeks'],['Money','~€20k + €500/month'],['Resources','2 engineers + client data'],['Payback','~2 avoided external hires']].forEach(([a,b],i)=>{
+[['Time','Pilot: 6 weeks'],['Money','Model use: ~€300/month'],['Resources','5 staffing managers, 2 h/week'],['Total','~€3k, pays back in ~4 teams']].forEach(([a,b],i)=>{
  const x=0.7+(i%2)*2.05,y=1.75+Math.floor(i/2)*1.7;
  s.addShape(p.ShapeType.roundRect,{x,y,w:1.9,h:1.5,rectRadius:0.12,fill:{color:WHITE},line:{color:BLUE,width:1}});
  s.addText(a,{x:x+0.1,y:y+0.1,w:1.7,h:0.3,fontFace:F,fontSize:14,bold:true,color:NAVY,margin:0,isTextBox:true});
  s.addText(b,{x:x+0.1,y:y+0.45,w:1.7,h:0.7,fontFace:F,fontSize:14,color:NAVY,margin:0,valign:'top',isTextBox:true});
  s.addText('hypothesis',{x:x+0.1,y:y+1.15,w:1.7,h:0.25,fontFace:F,fontSize:10,italic:true,color:GREY,margin:0,isTextBox:true});});
-[['Revenue generation','+€700k / year','per 1,000 people, +1 pt utilization'],['Time savings','Days → minutes','to staff one team'],['Talent','−€10k per hire','external hire avoided, found internally']].forEach(([a,b,c],i)=>{
+[['Revenue generation','+€700k / year','per 1,000 people, +1 pt utilization'],['Time savings','Days → minutes','to staff one team'],['Talent','−1 week on the bench','per person placed, using hidden internal skills']].forEach(([a,b,c],i)=>{
  const y=1.1+i*1.4;
  s.addShape(p.ShapeType.roundRect,{x:5.1,y,w:4.4,h:1.3,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
  s.addText(a,{x:5.3,y:y+0.08,w:4,h:0.3,fontFace:F,fontSize:14,bold:true,color:'BFD9EE',margin:0,isTextBox:true});
