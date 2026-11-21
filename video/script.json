@@ -1,11 +1,12 @@
 {
   "voice_id": "nPczCjzI2devNBz1zQrb",
-  "_note": "Voice: Brian (ElevenLabs stock, male narrator). PLACEHOLDER text. start = second in the screen recording. ~2.6 words/second. Rewrite once the demo exists.",
+  "_note": "Voice: Brian (ElevenLabs stock, male narrator). PLACEHOLDER text: plain language for senior non-technical staffing team (no jargon). Covers the 4 problem dimensions: no standard, hard matching, unexplained decisions, missing info. start = second in the screen recording, ~2.6 words/second. Align with the deck once the demo exists.",
   "segments": [
-    {"start": 0.0,  "text": "Companies already have the data to match people with projects. They just can't see it."},
-    {"start": 6.0,  "text": "Meet [PRODUCT]. An HR manager opens a new project and asks: who should staff this?"},
-    {"start": 13.0, "text": "In seconds, [PRODUCT] ranks internal candidates by skills, availability and growth potential, and explains why."},
-    {"start": 22.0, "text": "It also flags the skill gaps the organization will face next quarter, before they become hiring costs."},
-    {"start": 30.0, "text": "[KEY METRIC]: from weeks of manual search to minutes. Built on NTT DATA's own data. Ready to scale."}
+    {"start": 0.0,  "text": "Today, putting the right person on the right project depends on gut feeling, spreadsheets and phone calls."},
+    {"start": 8.0,  "text": "Meet [PRODUCT]. A staffing manager opens a new project and asks one question: who fits best?"},
+    {"start": 15.0, "text": "Every person is described the same way, with the same skills and levels, so profiles can finally be compared."},
+    {"start": 23.0, "text": "In seconds, [PRODUCT] suggests the best people for the project, and says in plain words why each one fits."},
+    {"start": 31.0, "text": "Missing information is shown upfront, so the manager knows what to check before deciding."},
+    {"start": 38.0, "text": "[KEY METRIC]. Faster, fairer and explainable staffing, built on NTT DATA's own data."}
   ]
 }
