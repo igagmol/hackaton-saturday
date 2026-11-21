@@ -40,29 +40,32 @@ box(s,6.7,3.85,2.8,1.35,'Why it is perfect for [ user ]','[ one-line recap ]');
 s=p.addSlide();title(s,'Viability & impact');
 s.addShape(p.ShapeType.roundRect,{x:0.5,y:1.1,w:4.4,h:4.1,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
 s.addText('MVP cost',{x:0.7,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,color:BLUE,margin:0,isTextBox:true});
-[['Time','[ hours / weeks ]'],['Money','[ € ]'],['Resources','[ people / tools / data ]'],['Total','[ € + time ]']].forEach(([a,b],i)=>{
+[['Time','Pilot: 6 weeks'],['Money','~€20k + €500/month'],['Resources','2 engineers + client data'],['Payback','~2 avoided external hires']].forEach(([a,b],i)=>{
  const x=0.7+(i%2)*2.05,y=1.75+Math.floor(i/2)*1.7;
  s.addShape(p.ShapeType.roundRect,{x,y,w:1.9,h:1.5,rectRadius:0.12,fill:{color:WHITE},line:{color:BLUE,width:1}});
  s.addText(a,{x:x+0.1,y:y+0.1,w:1.7,h:0.3,fontFace:F,fontSize:14,bold:true,color:NAVY,margin:0,isTextBox:true});
- ph(s,b,{x:x+0.1,y:y+0.45,w:1.7,h:0.95,valign:'top',margin:0,fontSize:16});});
-[['Revenue generation','[ € / year ]'],['Time savings','[ hours / year ]'],['Talent','[ productivity % ]']].forEach(([a,b],i)=>{
+ s.addText(b,{x:x+0.1,y:y+0.45,w:1.7,h:0.7,fontFace:F,fontSize:14,color:NAVY,margin:0,valign:'top',isTextBox:true});
+ s.addText('hypothesis',{x:x+0.1,y:y+1.15,w:1.7,h:0.25,fontFace:F,fontSize:10,italic:true,color:GREY,margin:0,isTextBox:true});});
+[['Revenue generation','+€700k / year','per 1,000 people, +1 pt utilization'],['Time savings','Days → minutes','to staff one team'],['Talent','−€10k per hire','external hire avoided, found internally']].forEach(([a,b,c],i)=>{
  const y=1.1+i*1.4;
  s.addShape(p.ShapeType.roundRect,{x:5.1,y,w:4.4,h:1.3,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
- s.addText(a,{x:5.3,y:y+0.1,w:4,h:0.3,fontFace:F,fontSize:14,bold:true,color:'BFD9EE',margin:0,isTextBox:true});
- s.addText(b,{x:5.3,y:y+0.5,w:4,h:0.7,fontFace:F,fontSize:30,bold:true,italic:true,color:WHITE,margin:0,isTextBox:true});});
+ s.addText(a,{x:5.3,y:y+0.08,w:4,h:0.3,fontFace:F,fontSize:14,bold:true,color:'BFD9EE',margin:0,isTextBox:true});
+ s.addText(b,{x:5.3,y:y+0.4,w:4,h:0.5,fontFace:F,fontSize:28,bold:true,color:WHITE,margin:0,isTextBox:true});
+ s.addText(c+' (hypothesis)',{x:5.3,y:y+0.93,w:4,h:0.3,fontFace:F,fontSize:11,italic:true,color:'BFD9EE',margin:0,isTextBox:true});});
 // 5 eval + scale
 s=p.addSlide();title(s,'Evaluation & scalability');
 s.addShape(p.ShapeType.roundRect,{x:0.5,y:1.1,w:4.5,h:4.1,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
 s.addText('Dashboard',{x:0.7,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,color:BLUE,margin:0,isTextBox:true});
-[1,2,3].forEach(i=>{const x=0.7+(i-1)*1.4;
+[['Synergy gap','<10 pts'],['Performance','+10%'],['Time to staff','−80%']].forEach(([k,v],i)=>{const x=0.7+i*1.4;
  s.addShape(p.ShapeType.roundRect,{x,y:1.75,w:1.3,h:1.2,rectRadius:0.1,fill:{color:WHITE},line:{color:BLUE,width:1}});
- s.addText('KPI '+i,{x:x+0.08,y:1.8,w:1.15,h:0.3,fontFace:F,fontSize:12,bold:true,color:NAVY,margin:0,isTextBox:true});
- ph(s,'[ value + unit ]',{x:x+0.08,y:2.15,w:1.15,h:0.7,fontSize:14,valign:'top',margin:0});});
+ s.addText(k,{x:x+0.08,y:1.8,w:1.15,h:0.3,fontFace:F,fontSize:12,bold:true,color:NAVY,margin:0,isTextBox:true});
+ s.addText(v,{x:x+0.08,y:2.15,w:1.15,h:0.45,fontFace:F,fontSize:22,bold:true,color:BLUE,margin:0,isTextBox:true});
+ s.addText('target (hypothesis)',{x:x+0.08,y:2.65,w:1.15,h:0.25,fontFace:F,fontSize:10,italic:true,color:GREY,margin:0,isTextBox:true});});
 s.addShape(p.ShapeType.roundRect,{x:0.7,y:3.15,w:4.1,h:1.9,rectRadius:0.1,fill:{color:WHITE},line:{color:BLUE,width:1,dashType:'dash'}});
-ph(s,'[ dashboard screenshot / chart ]',{x:0.7,y:3.15,w:4.1,h:1.9,align:'center'});
+ph(s,'Predicted vs perceived synergy after 2 months · pilot vs manual teams · [ dashboard screenshot ]',{x:0.7,y:3.15,w:4.1,h:1.9,align:'center'});
 s.addShape(p.ShapeType.roundRect,{x:5.2,y:1.1,w:4.3,h:4.1,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
 s.addText('How to scale',{x:5.4,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,color:WHITE,margin:0,isTextBox:true});
-[['1  Pilot','[ scope · KPI threshold ]'],['2  Expand','[ teams / countries ]'],['3  Enterprise','[ full rollout · APIs ]']].forEach(([a,b],i)=>{const y=1.75+i*1.1;
+[['1  Pilot','5 projects: do all 3 KPIs hit target?'],['2  Expand','If yes: more projects and departments'],['3  Next steps','Feedback tunes the system: cost down, reach up']].forEach(([a,b],i)=>{const y=1.75+i*1.1;
  s.addShape(p.ShapeType.roundRect,{x:5.4,y,w:3.9,h:0.95,rectRadius:0.12,fill:{color:BLUE},line:{color:BLUE}});
  s.addText(a,{x:5.55,y:y+0.08,w:3.6,h:0.3,fontFace:F,fontSize:14,bold:true,color:WHITE,margin:0,isTextBox:true});
  s.addText(b,{x:5.55,y:y+0.42,w:3.6,h:0.45,fontFace:F,fontSize:14,italic:true,color:'DCEBF7',margin:0,isTextBox:true});});
