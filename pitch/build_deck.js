@@ -30,7 +30,8 @@ s.addShape(p.ShapeType.roundRect,{x:3.5,y:3.5,w:3,h:0.8,rectRadius:0.15,fill:{co
 s.addText('Matching people to projects is slow and opaque',{x:3.5,y:3.5,w:3,h:0.8,fontFace:F,fontSize:13,bold:true,color:WHITE,align:'center',valign:'middle',margin:0,isTextBox:true});
 // 3 solution
 s=p.addSlide();title(s,'The solution');
-[[0.5,1.1],[3.6,1.1],[0.5,3.25],[3.6,3.25]].forEach(([x,y],i)=>box(s,x,y,2.9,1.95,['1 · Interpret','2 · Match','3 · Explain','4 · Compare'][i],'Solves: '+['lack of automatic data standardization','slow best match','unclear decisions','missing key information'][i]+'\n[ how, one line ]\n[ image / keyword ]'));
+const INN=[['1 · Automated standardization','All existing and new data standardized automatically'],['2 · Complete profiles','Surveys fill preferences & risks; a 5-minute psychological test'],['3 · Plain-language prediction','Describe the need in plain words; the system asks for missing data and predicts the top team'],['4 · Explained decisions','Humans decide and add people; every match explained in natural language']];
+[[0.5,1.1],[3.6,1.1],[0.5,3.25],[3.6,3.25]].forEach(([x,y],i)=>box(s,x,y,2.9,1.95,INN[i][0],INN[i][1]));
 s.addShape(p.ShapeType.roundRect,{x:6.7,y:1.1,w:2.8,h:2.55,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
 s.addText('How it works',{x:6.85,y:1.2,w:2.5,h:0.35,fontFace:F,fontSize:14,bold:true,color:WHITE,margin:0,isTextBox:true});
 s.addText('Standardized data + surveys (preferences & risks) + 5-min psychological test predict the top team. Plain-language input, human decides, explanations in natural language.',{x:6.85,y:1.6,w:2.5,h:1.9,fontFace:F,fontSize:14,color:WHITE,margin:0,valign:'top',isTextBox:true});
