@@ -38,13 +38,13 @@ const INN=[['1  Automated standardization',''],['2  Complete profiles','Existing
 s=p.addSlide();title(s,'Viability & impact');
 s.addShape(p.ShapeType.roundRect,{x:0.5,y:1.1,w:4.4,h:4.1,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
 s.addText('MVP cost',{x:0.7,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,color:BLUE,margin:0,isTextBox:true});
-[['Time','6-week MVP pilot'],['Cost','~€3k over the 6 weeks'],['Human Resources','5 staffing managers, 2 h/week'],['Payback','After ~4 teams staffed']].forEach(([a,b],i)=>{
+[['Time','6-month MVP'],['Cost','€25–35k'],['Human Resources','2 team members, 1 full day per month'],['Payback','After 15–40 teams staffed']].forEach(([a,b],i)=>{
  const x=0.7+(i%2)*2.05,y=1.75+Math.floor(i/2)*1.7;
  s.addShape(p.ShapeType.roundRect,{x,y,w:1.9,h:1.5,rectRadius:0.12,fill:{color:WHITE},line:{color:BLUE,width:1}});
  s.addText(a,{x:x+0.1,y:y+0.1,w:1.7,h:0.3,fontFace:F,fontSize:14,bold:true,color:NAVY,margin:0,isTextBox:true});
  s.addText(b,{x:x+0.1,y:y+0.45,w:1.7,h:0.7,fontFace:F,fontSize:14,color:NAVY,margin:0,valign:'top',isTextBox:true});
  s.addText('hypothesis',{x:x+0.1,y:y+1.15,w:1.7,h:0.25,fontFace:F,fontSize:10,italic:true,color:GREY,margin:0,isTextBox:true});});
-[['Revenue generation','+€0.7M–1.4M / year','per 1,000 people: +1 to +2 pts utilization × €70k billing per head'],['Time savings','−90%  (days → hours)','time to staff one team, range −80% to −95%']].forEach(([a,b,c],i)=>{
+[['Revenue generation','+€0.7M–1.4M / year','per 1,000 people: 2–5 fewer bench days each (+1 to +2 pts utilization × €70k billing)'],['Time savings','€900–1,800 per team','20 h → 2 h of manager time, at €50–100 per hour']].forEach(([a,b,c],i)=>{
  const y=1.1+i*2.1;
  s.addShape(p.ShapeType.roundRect,{x:5.1,y,w:4.4,h:1.95,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
  s.addText(a,{x:5.3,y:y+0.15,w:4,h:0.35,fontFace:F,fontSize:16,bold:true,color:'BFD9EE',margin:0,isTextBox:true});
@@ -52,7 +52,7 @@ s.addText('MVP cost',{x:0.7,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,col
  s.addText(c+' (hypothesis)',{x:5.3,y:y+1.35,w:4,h:0.5,fontFace:F,fontSize:12,italic:true,color:'BFD9EE',margin:0,valign:'top',isTextBox:true});});
 // 5 eval + scale
 s=p.addSlide();title(s,'Evaluation & scalability');
-[['Synergy gap','<10 pts'],['Performance','+10%'],['Time to staff','−80%']].forEach(([k,v],i)=>{const y=1.1+i*1.4;
+[['Synergy gap','<10 pts'],['Performance','+10%'],['Time to staff','−90%']].forEach(([k,v],i)=>{const y=1.1+i*1.4;
  s.addShape(p.ShapeType.roundRect,{x:0.5,y,w:4.5,h:1.3,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
  s.addText(k,{x:0.7,y:y+0.08,w:4.1,h:0.35,fontFace:F,fontSize:16,bold:true,color:NAVY,margin:0,isTextBox:true});
  s.addText(v,{x:0.7,y:y+0.45,w:4.1,h:0.6,fontFace:F,fontSize:36,bold:true,color:BLUE,margin:0,isTextBox:true});
