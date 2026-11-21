@@ -12,7 +12,7 @@ function box(s,x,y,w,h,head,ph_,fill,hc){s.addShape(p.ShapeType.roundRect,{x,y,w
 // 1 cover
 let s=p.addSlide();s.background={color:NAVY};logo(s,true);
 s.addText('CDTM Valencia Hacks',{x:0.6,y:0.9,w:6,h:0.4,fontFace:F,fontSize:18,bold:true,color:AC,margin:0,isTextBox:true});
-s.addText('Marketplace for the Automatic Prediction of High-Performance Teams',{x:0.6,y:1.4,w:8.8,h:1.7,fontFace:F,fontSize:40,bold:true,color:WHITE,margin:0,isTextBox:true,valign:'middle'});
+s.addText([{text:'Synerg-IA',options:{fontSize:56,bold:true,color:WHITE,breakLine:true}},{text:'Automatic Prediction of High-Performance Teams',options:{fontSize:28,bold:true,color:WHITE}}],{x:0.6,y:1.4,w:8.8,h:1.7,fontFace:F,margin:0,isTextBox:true,valign:'middle'});
 s.addText('The person you need is already in the company',{x:0.6,y:3.2,w:8.8,h:0.5,fontFace:F,fontSize:20,italic:true,color:'BFD9EE',margin:0,isTextBox:true});
 s.addText('Sarah Vasquez  ·  José Antonio Calamardo Manrique  ·  Ignacio Aguera Molto\nDavid García Carrión  ·  Damián Lorca Andría',{x:0.6,y:4.3,w:8.8,h:0.8,fontFace:F,fontSize:14,color:WHITE,margin:0,isTextBox:true,valign:'top',paraSpaceAfter:4});
 // 2 problem
@@ -29,11 +29,29 @@ s.addShape(p.ShapeType.roundRect,{x:3.5,y:3.5,w:3,h:0.8,rectRadius:0.15,fill:{co
 s.addText('Matching people to projects is slow and opaque',{x:3.5,y:3.5,w:3,h:0.8,fontFace:F,fontSize:13,bold:true,color:WHITE,align:'center',valign:'middle',margin:0,isTextBox:true});
 // 3 solution
 s=p.addSlide();title(s,'The solution');
-const INN=[['1  Automated standardization',''],['2  Complete profiles','Existing data · Preferences and risks · Psychological features'],['3  Plain-language prediction',''],['4  Explained decisions','']];
-[[0.5,1.1],[5.1,1.1],[0.5,3.25],[5.1,3.25]].forEach(([x,y],i)=>{s.addShape(p.ShapeType.roundRect,{x,y,w:4.4,h:1.95,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
- const runs=[{text:INN[i][0],options:{fontSize:26,bold:true,color:BLUE,align:'center',breakLine:!!INN[i][1]}}];
- if(INN[i][1])runs.push({text:INN[i][1],options:{fontSize:16,color:NAVY,align:'center'}});
- s.addText(runs,{x:x+0.2,y:y+0.1,w:4,h:1.75,fontFace:F,align:'center',valign:'middle',margin:0,isTextBox:true});});
+const RED='C00000';
+function card(x,y,w,h,t){s.addShape(p.ShapeType.roundRect,{x,y,w,h,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
+ s.addText(t,{x:x+0.2,y:y+0.08,w:w-0.4,h:0.45,fontFace:F,fontSize:22,bold:true,color:BLUE,margin:0,isTextBox:true,valign:'middle'});}
+function screen(x,y,w,h,label,txt,user){s.addShape(p.ShapeType.roundRect,{x,y,w,h,rectRadius:0.08,fill:{color:WHITE},line:{color:NAVY,width:1.5}});
+ s.addText(label,{x:x+0.08,y:y+0.04,w:w-0.16,h:0.2,fontFace:F,fontSize:10,bold:true,color:user?GREY:BLUE,margin:0,isTextBox:true});
+ s.addText(txt,{x:x+0.08,y:y+0.26,w:w-0.16,h:h-0.3,fontFace:F,fontSize:11,color:NAVY,margin:0,valign:'top',isTextBox:true});}
+// 1
+card(0.5,1.1,5.0,1.95,'1  Automated standardization');
+[['Sw Engineer · Developer','Software Engineer'],['Python3 · python · Py','Python'],['ML · Machine-Learning','Machine Learning']].forEach(([v,t],i)=>{
+ s.addText([{text:v,options:{color:RED,bold:true}},{text:'  →  ',options:{color:NAVY}},{text:t,options:{color:NAVY,bold:true}}],{x:0.7,y:1.7+i*0.42,w:4.6,h:0.38,fontFace:F,fontSize:15,margin:0,isTextBox:true,valign:'middle'});});
+// 2
+card(5.7,1.1,3.8,1.95,'2  Complete profiles');
+s.addImage({path:'FaBrain.png',x:6.5,y:1.65,w:0.85,h:0.85,altText:'Psychological features'});
+s.addImage({path:'FaUsers.png',x:7.85,y:1.65,w:0.85,h:0.85,altText:'High-performance teams'});
+s.addText('Existing data · Preferences and risks · Psychological features',{x:5.9,y:2.55,w:3.4,h:0.45,fontFace:F,fontSize:12,color:NAVY,align:'center',margin:0,isTextBox:true,valign:'middle'});
+// 3
+card(0.5,3.25,5.0,1.95,'3  Plain-language prediction');
+screen(0.7,3.85,2.2,1.2,'YOU','I want a team with 2 software engineers, 2 data analysts and 2 project managers',true);
+screen(3.1,3.85,2.2,1.2,'AI','Asks for every need to build the high-performance team',false);
+// 4
+card(5.7,3.25,3.8,1.95,'4  Explained decisions');
+s.addText('Explains everything. You keep total control of the final decision.',{x:5.9,y:3.8,w:3.4,h:0.6,fontFace:F,fontSize:14,color:NAVY,margin:0,valign:'top',isTextBox:true});
+screen(5.9,4.45,3.4,0.65,'WHY THIS TEAM?','Complementary roles → high synergy',false);
 // 4 viability
 s=p.addSlide();title(s,'Viability & impact');
 s.addShape(p.ShapeType.roundRect,{x:0.5,y:1.1,w:4.4,h:4.1,rectRadius:0.15,fill:{color:LIGHT},line:{color:BLUE,width:1.25}});
@@ -60,9 +78,8 @@ s=p.addSlide();title(s,'Evaluation & scalability');
  s.addText('target (hypothesis)',{x:0.7,y:y+1.02,w:4.1,h:0.25,fontFace:F,fontSize:11,italic:true,color:GREY,margin:0,isTextBox:true});});
 s.addShape(p.ShapeType.roundRect,{x:5.2,y:1.1,w:4.3,h:4.1,rectRadius:0.15,fill:{color:NAVY},line:{color:NAVY}});
 s.addText('How to scale',{x:5.4,y:1.2,w:4,h:0.4,fontFace:F,fontSize:20,bold:true,color:WHITE,margin:0,isTextBox:true});
-[['1  Pilot','5 projects',1],['2  Expand','',1],['3  Next step','',2]].forEach(([a,b,n],i)=>{const y=1.75+i*1.1;
- s.addShape(p.ShapeType.roundRect,{x:5.4,y,w:3.9,h:0.95,rectRadius:0.12,fill:{color:BLUE},line:{color:BLUE}});
- s.addText(a,{x:5.55,y:y+0.08,w:3.6,h:0.3,fontFace:F,fontSize:16,bold:true,color:WHITE,margin:0,isTextBox:true});
- if(b)s.addText(b,{x:5.55,y:y+0.45,w:3.6,h:0.4,fontFace:F,fontSize:16,color:WHITE,margin:0,isTextBox:true});});
-s.addText([{text:'Feedback refines the system',options:{bullet:true,breakLine:true}},{text:'Cost down, reach up',options:{bullet:true}}],{x:5.55,y:4.35,w:3.6,h:0.5,fontFace:F,fontSize:14,color:WHITE,margin:0,isTextBox:true,valign:'top'});
+[['1  Pilot','5 projects'],['2  Expand','Less Cost, Higher Impact']].forEach(([a,b],i)=>{const y=1.85+i*1.6;
+ s.addShape(p.ShapeType.roundRect,{x:5.4,y,w:3.9,h:1.4,rectRadius:0.12,fill:{color:BLUE},line:{color:BLUE}});
+ s.addText(a,{x:5.6,y:y+0.15,w:3.5,h:0.4,fontFace:F,fontSize:20,bold:true,color:WHITE,margin:0,isTextBox:true});
+ s.addText(b,{x:5.6,y:y+0.7,w:3.5,h:0.5,fontFace:F,fontSize:20,color:WHITE,margin:0,isTextBox:true});});
 p.writeFile({fileName:'/mnt/project-files/pitch/NTTDATA_pitch_deck.pptx'}).then(()=>console.log('done'));
